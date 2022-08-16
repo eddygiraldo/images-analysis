@@ -36,7 +36,7 @@ const Document: NextPage = () => {
   }, [webcamRef, imageUrl]);
 
   const videoConstraints = {
-    facingMode: 'user',
+    facingMode: 'environment',
   };
 
   return (
