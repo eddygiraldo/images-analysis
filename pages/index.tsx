@@ -50,7 +50,7 @@ const Home: NextPage = () => {
   }, [webcamRef, imageUrl]);
 
   const videoConstraints = {
-    facingMode: 'environment',
+    facingMode: 'user',
   };
 
   return (
