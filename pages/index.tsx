@@ -49,11 +49,20 @@ const Home: NextPage = () => {
     setImageUrl(imageSrc);
   }, [webcamRef, imageUrl]);
 
+  const videoConstraints = {
+    facingMode: 'environment',
+  };
+
   return (
     <div>
       <main>
         <h1>Face detection</h1>
-        <Webcam audio={false} ref={webcamRef} screenshotFormat='image/jpeg' />
+        <Webcam
+          audio={false}
+          ref={webcamRef}
+          screenshotFormat='image/jpeg'
+          videoConstraints={videoConstraints}
+        />
         <InputContainer>
           <button onClick={capture}>Capture</button>
           <input

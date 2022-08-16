@@ -35,11 +35,20 @@ const Document: NextPage = () => {
     setImageUrl(imageSrc);
   }, [webcamRef, imageUrl]);
 
+  const videoConstraints = {
+    facingMode: 'user',
+  };
+
   return (
     <div>
       <main>
         <h1>Document detection</h1>
-        <Webcam audio={false} ref={webcamRef} screenshotFormat='image/jpeg' />
+        <Webcam
+          audio={false}
+          ref={webcamRef}
+          screenshotFormat='image/jpeg'
+          videoConstraints={videoConstraints}
+        />
         <InputContainer>
           <button onClick={capture}>Capture</button>
           <input
